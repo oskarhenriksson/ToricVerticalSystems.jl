@@ -1,6 +1,6 @@
-# Toricity of vertically parametrized systems with applications to reaction network theory
+# Toric invariance of vertically parametrized systems
 
-This repository contains files for the forthcoming paper _Toricity of vertically parametrized systems with applications to reaction network theory_ by Elisenda Feliu and Oskar Henriksson.
+This repository contains files for the paper [Toric invariance of vertically parametrized systems](https://arxiv.org/abs/2411.15134) by Elisenda Feliu and Oskar Henriksson.
 
 ## File descriptions
 The repository contains the following files:
