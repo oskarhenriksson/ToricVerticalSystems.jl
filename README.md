@@ -1,5 +1,7 @@
 # ToricVerticalSystems.jl
 
+[![CI](https://github.com/oskarhenriksson/ToricVerticalSystems.jl/actions/workflows/ci.yml/badge.svg)](https://github.com/oskarhenriksson/ToricVerticalSystems.jl/actions/workflows/ci.yml)
+
 This repository contains a proof-of-concept implementation of the methods described in the  paper [Toric invariance of vertically parametrized systems](https://arxiv.org/abs/2411.15134) by Elisenda Feliu and Oskar Henriksson. It also contains data from the database experiments described in the paper. 
 
 ## File descriptions
