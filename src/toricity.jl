@@ -1,7 +1,17 @@
 using Oscar
 using DataStructures
 
-# Matroid partition
+export matroid_partition,
+toric_invariance_group,
+coset_counting_system,
+number_of_cosets_for_random_parameters,
+coset_counting_analysis,
+coset_with_multistationarity,
+is_quasi_homogeneous,
+injectivity_test,
+mixed_volume
+
+
 
 # Transitive closure of a relation
 function transitive_closure(relation)
@@ -86,6 +96,7 @@ injectivity_test(C::QQMatrix, M::ZZMatrix, A::ZZMatrix) = injectivity_test(C, M,
 
 
 import HomotopyContinuation as HC
+using HomotopyContinuation: mixed_volume
 
 function coset_counting_system(C::QQMatrix, M::ZZMatrix, A::ZZMatrix)
     C = row_space(C)
@@ -97,6 +108,7 @@ function coset_counting_system(C::QQMatrix, M::ZZMatrix, A::ZZMatrix)
     linear_part = A * x - c
     return HC.System(vcat(steady_state_part, linear_part), variables=x, parameters=vcat(k, c))
 end
+
 
 function has_nonpositive_entry(C::HC.AbstractSolutionCertificate)
     if !HC.is_certified(C)

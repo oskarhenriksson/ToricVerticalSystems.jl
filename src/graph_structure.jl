@@ -1,5 +1,14 @@
-using Oscar
 import Graphs 
+
+export is_terminal_strongly_connected_component,
+terminal_strongly_connected_components,
+is_weakly_reversible,
+reaction_graph,
+linkage_classes,
+delta,
+covered_by_deficiency_zero_theorem,
+covered_by_deficiency_one_theorem,
+complexes
 
 # Graph theoretic helper functions
 function is_terminal_strongly_connected_component(g, scc)

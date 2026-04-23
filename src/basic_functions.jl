@@ -1,10 +1,15 @@
-
-# Basic functions
+export 
+row_space, 
+supp, 
+nonempty_positive_kernel,
+positive_vector_in_rowspace,
+rays_of_nonnegative_kernel,
+zero_columns
 
 # Iterate over rows and columns of a matrix 
 # (will be included in future Oscar versions) 
-Base.eachrow(a::MatrixElem) = Slices(a, (1, :), (axes(a, 1),))
-Base.eachcol(a::MatrixElem) = Slices(a, (:, 1), (axes(a, 2),))
+# Base.eachrow(a::MatrixElem) = Slices(a, (1, :), (axes(a, 1),))
+# Base.eachcol(a::MatrixElem) = Slices(a, (:, 1), (axes(a, 2),))
 
 
 function is_polynomial_of_constant_signs(f::MPolyRingElem)
@@ -22,11 +27,8 @@ function has_minor_of_constant_sign(M::MatrixElem, r::Int)
     return false
 end
 
-# Check if element is nonzero
-is_non_zero(x) = !is_zero(x)
-
 # Support of a vector
-supp(v::Vector) = findall(is_non_zero, v)
+supp(v::Vector) = findall(!is_zero, v)
 
 # Row space
 function row_space(A::MatrixElem) 

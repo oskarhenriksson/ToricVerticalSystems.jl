@@ -1,6 +1,7 @@
 using Test
-
-include("../src/main.jl")
+using ToricVerticalSystems
+using Oscar
+using Graphs
 
 include("test_crnt.jl")
 include("test_toricity.jl")

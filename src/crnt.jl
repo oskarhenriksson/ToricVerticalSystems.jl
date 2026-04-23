@@ -1,6 +1,14 @@
 
 # General CRNT functions
 
+export product_matrix, 
+reaction_pairs, 
+stoichiometric_and_kinetic_matrix_from_reaction_pairs,
+minimal_siphons,
+siphon_test,
+reconstruct_stoichiometric_matrix_with_row_space_and_conserved_quantities
+
+
 function product_matrix(N::QQMatrix, M::ZZMatrix)
     @req size(N) == size(M) "Stoichiometric and kinetic matrix must have the same size"
     @req all(is_one, denominator.(N)) "Stoichiometric matrix needs to have integer entries"

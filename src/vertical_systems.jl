@@ -1,7 +1,7 @@
-
+export vertical_system, is_linear
 
 # General vertical system functions
-vertical_system = function (C::QQMatrix, M::ZZMatrix; a=nothing)
+function vertical_system(C::QQMatrix, M::ZZMatrix; a=nothing)
     if isnothing(a)
         A, a = rational_function_field(QQ, "a" => 1:ncols(M))
         R, x = polynomial_ring(A, "x" => 1:nrows(M))

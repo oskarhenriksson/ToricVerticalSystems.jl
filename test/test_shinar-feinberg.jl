@@ -60,7 +60,7 @@ function run_tests()
 
         # Mixed volume bound on the number of cosets
         F = coset_counting_system(C, M, A)
-        @test HC.mixed_volume(F) == 4
+        @test mixed_volume(F) == 4
 
         # Siphon test
         @test siphon_test(N, M) == true

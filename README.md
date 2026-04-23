@@ -1,6 +1,6 @@
-# Toric invariance of vertically parametrized systems
+# ToricVerticalSystems.jl
 
-This repository contains files for the paper [Toric invariance of vertically parametrized systems](https://arxiv.org/abs/2411.15134) by Elisenda Feliu and Oskar Henriksson.
+This repository contains a proof-of-concept implementation of the methods described in the  paper [Toric invariance of vertically parametrized systems](https://arxiv.org/abs/2411.15134) by Elisenda Feliu and Oskar Henriksson. It also contains data from the database experiments described in the paper. 
 
 ## File descriptions
 The repository contains the following files:
@@ -11,7 +11,4 @@ The repository contains the following files:
 See the notebook `IDH_example.ipynb` for an illustration of how our functions can be applied to the IDHKP-IDH network (see Example 1.1 in the paper and Figure 8.1(a)).
 
 ## Dependencies
-The code is based on `Oscar v1.3.1` and `DataStructures v0.18.22`, `Graphs v1.13.0` and `HomotopyContinuation v2.15.0`. 
-
-For exact dependencies, see the file `Manifest.toml`.
-
+The code is based on `Oscar` and `DataStructures`, `Graphs` and `HomotopyContinuation`. 

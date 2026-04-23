@@ -1,6 +1,11 @@
 using Oscar
 import Graphs
 
+export intermediates,
+single_input_intermediates,
+reduced_network,
+lift_exponent_matrix
+
 # Given a list of (candidate) intermediate vertices, find their inputs and outputs.
 # If an intermediate vertex has no inputs or outputs, it is removed from the list of intermediates,
 # and the analysis is re-done

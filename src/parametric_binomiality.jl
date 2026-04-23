@@ -1,5 +1,7 @@
 using Oscar
 
+export binomiality_check
+
 function binomiality_check(F; printing_function=println, verbose::Bool=true)
 
     # Specialize F at random parameters and check if binomiality can be ruled out

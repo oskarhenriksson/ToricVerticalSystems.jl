@@ -1,6 +1,10 @@
 
 # Generic nondegeneracy checks
 
+export has_nondegenerate_zero,
+generic_local_acr,
+all_positive_roots_nondegenerate
+
 # Checks whether (C.diag(k).x^M, L*x-b) has a nondegenerate zero
 function has_nondegenerate_zero(C::QQMatrix, M::ZZMatrix, L::QQMatrix=zero_matrix(QQ, 0, nrows(M));
     number_of_attempts::Int=3, max_entry_size::Int=1000, certify::Bool=true)
