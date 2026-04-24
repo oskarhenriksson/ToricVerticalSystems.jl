@@ -13,4 +13,8 @@ The repository contains the following files:
 See the notebook `IDH_example.ipynb` for an illustration of how our functions can be applied to the IDHKP-IDH network (see Example 1.1 in the paper and Figure 7.1(a)).
 
 ## Dependencies
-The code is based on `Oscar` and `DataStructures`, `Graphs` and `HomotopyContinuation`. 
+The code is mainly based on the following other Julia packages:
+- `Oscar.jl` (for polyhyhedral geometry and Gröbner bases)
+- `Graphs.jl` (for graph theory)
+- `MixedSubdivisions.jl` (for computing mixed volumes)
+- `HomotopyContinuation.jl` (for certified numerical polynomial systems solving)
