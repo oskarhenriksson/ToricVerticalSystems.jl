@@ -1,0 +1,9 @@
+[deps]
+Graphs = "86223c79-3864-5bf0-83f7-82e725a168b6"
+Oscar = "f1435218-dba5-11e9-1e4d-f1a5fab5fc13"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+ToricVerticalSystems = "cf41dff4-ce01-42b8-ad7b-7c5b8fe2444d"
+
+[sources]
+ToricVerticalSystems = {path = ".."}

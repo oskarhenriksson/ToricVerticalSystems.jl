@@ -10,7 +10,7 @@ The repository contains the following files:
 * A directory `results` that contains list of networks in [ODEbase](https://www.odebase.org/) (as of November 2, 2023) with various properties. All the results are summarized in a text file `report.txt` and the table `results.csv` (see the file `legend.md` for explanation of the column headings).
 
 ## Examples
-See the notebook `IDH_example.ipynb` for an illustration of how our functions can be applied to the IDHKP-IDH network (see Example 1.1 in the paper and Figure 8.1(a)).
+See the notebook `IDH_example.ipynb` for an illustration of how our functions can be applied to the IDHKP-IDH network (see Example 1.1 in the paper and Figure 7.1(a)).
 
 ## Dependencies
 The code is based on `Oscar` and `DataStructures`, `Graphs` and `HomotopyContinuation`. 

@@ -2,7 +2,7 @@
 
 julia_version = "1.12.2"
 manifest_format = "2.0"
-project_hash = "c24761330b14104a71c5ee100cab62917f5db3b4"
+project_hash = "5146c9fa6cedd9c5dae4bf92eb54b43a5ed0e058"
 
 [[deps.ADTypes]]
 git-tree-sha1 = "f7304359109c768cf32dc5fa2d371565bb63b68a"
@@ -2626,7 +2626,7 @@ version = "0.5.29"
 
 [[deps.ToricVerticalSystems]]
 deps = ["CSV", "Catalyst", "DataFrames", "DataStructures", "Graphs", "HomotopyContinuation", "Oscar"]
-path = "."
+path = ".."
 uuid = "cf41dff4-ce01-42b8-ad7b-7c5b8fe2444d"
 version = "0.1.0"
 
