@@ -10,7 +10,9 @@ The repository contains the following files:
 * A directory `results` that contains list of networks in [ODEbase](https://www.odebase.org/) (as of November 2, 2023) with various properties. All the results are summarized in a text file `report.txt` and the table `results.csv` (see the file `legend.md` for explanation of the column headings).
 
 ## Examples
-See the notebook `IDH_example.ipynb` for an illustration of how our functions can be applied to the IDHKP-IDH network (see Example 1.1 in the paper and Figure 7.1(a)).
+For an illustration of how the package works, we refer to the following two notesbooks:
+- `IDH_example.ipynb` where we analyze the IDHKP-IDH network from Example 1.1 and Figure 7.1(a) in the paper.
+- `calcium_example.ipynb` where we analyze the calcium network from Example 7.6 in the paper.
 
 ## Dependencies
 The code is mainly based on the following other Julia packages:
