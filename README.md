@@ -12,7 +12,7 @@ The repository contains the following files:
 ## Examples
 For an illustration of how the package works, we refer to the following two notesbooks:
 - `IDH_example.ipynb` where we analyze the IDHKP-IDH network from Example 1.1 and Figure 7.1(a) in the paper.
-- `calcium_example.ipynb` where we analyze a covalent modification cycle appearing as Example 7.6 in the paper.
+- `CMC_example.ipynb` where we analyze a covalent modification cycle appearing as Example 7.6 in the paper.
 
 ## Dependencies
 The code is mainly based on the following other Julia packages:
