@@ -14,16 +14,16 @@ The csv file `results.csv` contains a summary of the analysis of the networks fr
 ## Toricity
 * `ToricRank` is the toric rank of the network (i.e., the rank of the toric invariance group)
 * `MaximalToricRank` is true if the toric rank equals the number of species minus the rank of the network.
-* `GenericallyLocallyToric` is true if the network is generically locally toric in the sense of Definition 3.4 and Theorem 5.3 of the paper. 
-* `LocallyToric` is true if we were able to verify that the network is locally toric with Algorithm 6.7 in the paper.
-* `Toric` is true if we were able to verify that the network is toric with Algorithm 6.7 in the paper.
+* `GenericallyLocallyToric` is true if the network is generically locally toric in the sense of Definition 3.3 and Theorem 5.3 of the paper. 
+* `LocallyToric` is true if we were able to verify that the network is locally toric with Algorithm 2 in the paper.
+* `Toric` is true if we were able to verify that the network is toric with Algorithm 2 in the paper.
 * `TrivialPartition` is true if the matroid partition consists of a single block.
 * `Quasihomogeneous` is true if the toric rank is positive and the steady state system is quasihomogeneous with respect to the elements of the toric invariance group.
 
 ## Consequences of toricity
-* `Multistationarity` is true if we were able to verify that the network has the capacity for multistationarity with the methods in Section 7.
-* `ACR` is true if we were able to vertify that the network has ACR with the methods in Section 7.
-* `LocalACR` is true if we were able to vertify that the network has local ACR with the methods in Section 7.
+* `Multistationarity` is true if we were able to verify that the network has the capacity for multistationarity with the methods in Section 7.2.
+* `ACR` is true if we were able to vertify that the network has ACR with the methods in Section 7.2.
+* `LocalACR` is true if we were able to vertify that the network has local ACR with the methods in Section 7.2.
 
 ## Other properties of the network
 * `GenericallyBinomial` is true if we were able to prove that the steady state ideal is generically binomial [^1]. 
