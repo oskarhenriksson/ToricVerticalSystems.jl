@@ -5,7 +5,8 @@ export product_matrix,
 reaction_pairs, 
 stoichiometric_and_kinetic_matrix_from_reaction_pairs,
 minimal_siphons,
-siphon_test,
+critical_minimal_siphons,
+has_critical_siphon,
 reconstruct_stoichiometric_matrix_with_row_space_and_conserved_quantities
 
 
@@ -31,6 +32,13 @@ function stoichiometric_and_kinetic_matrix_from_reaction_pairs(reactions::Vector
 end
 
 
+
+"""
+    minimal_siphons(N::QQMatrix, M::ZZMatrix)
+
+Computes the inclusion-minimal siphons of the network with stoichiometric matrix `N` and kinetic matrix `M`. 
+
+"""
 function minimal_siphons(N::QQMatrix, M::ZZMatrix)
     n = nrows(M)
     reactions = reaction_pairs(N, M)
@@ -71,16 +79,68 @@ function minimal_siphons(N::QQMatrix, M::ZZMatrix)
     return extend_to_siphon(Set{Int}(), 1:n, Set{Int}[])
 end
 
-function siphon_test(N::QQMatrix, M::ZZMatrix)
+
+"""
+    has_critical_siphon(N::QQMatrix, M::ZZMatrix)
+
+Checks whether a network has a critical siphon (i.e., a siphon that does not contain 
+the support of a positive conservation law).
+
+If there is a critical minimal siphon, the function returns `true`.
+
+If there are no critical minimal siphons, the function returns `false`. 
+In this case, the network lacks relevant boundary steady states and displays persistence.
+
+"""
+function has_critical_siphon(N::QQMatrix, M::ZZMatrix)
+    return !isempty(critical_minimal_siphons(N, M))
+end
+
+
+"""
+    critical_minimal_siphons(N::QQMatrix, M::ZZMatrix)
+
+Find the critical minimal siphons of the network with stoichiometric matrix `N` and kinetic matrix `M`
+(i.e., the minimal siphons that do not contain the support of a positive conservation law).
+
+"""
+function critical_minimal_siphons(N::QQMatrix, M::ZZMatrix)
     siphons = minimal_siphons(N, M)
     W = kernel(N, side=:left)
+    critical_siphons = Vector{Set{Int}}()
     for Z in siphons
-        if !(positive_vector_in_rowspace(W[:, collect(Z)]))
-            return false
+        # Check if there is a nonnegative vector in rowspan(W) with support contained in Z
+        if !_has_nonnegative_rowspace_vector_supported_in(W, collect(Z))
+            push!(critical_siphons, Z)
         end
     end
-    return true
+    return critical_siphons
 end
+
+# Helper function: Checks whether A has a nonzero nonnegative vector x in its row space whose support is contained in Z
+function _has_nonnegative_rowspace_vector_supported_in(W::Union{ZZMatrix, QQMatrix}, Z::Vector{Int})
+    @req !isempty(Z) "Z must be nonempty"
+    @req all(i -> 1 <= i <= ncols(W), Z) "Z must be a subset of 1:ncols(W)"
+
+    C = kernel(W, side=:right)
+
+    # Inequalities: impose x_Z >= 0
+    inequalities = (-identity_matrix(QQ, length(Z)), zeros(Int, length(Z)))
+
+    # Normalization: impose sum(x_Z) = 1 (ruling out the zero vector)
+    normalization = matrix(QQ, 1, length(Z), ones(Int, length(Z)))
+
+    # Equalities: impose that x obtained by extending x_Z by zeros lies in rowspan(A)
+    equalities = (
+        vcat(transpose(C[Z, :]), normalization),
+        vcat(zeros(Int, ncols(C)), [1])
+    )
+
+    # Check for feasibility
+    P = polyhedron(inequalities, equalities)
+    return is_feasible(P)
+end
+
 
 function reconstruct_stoichiometric_matrix_with_row_space_and_conserved_quantities(C::QQMatrix, W::QQMatrix)
     @req nrows(W) == rank(W) "Matrix of conserved quantities needs to have full row rank"

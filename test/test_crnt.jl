@@ -35,7 +35,7 @@ function run_tests()
             ])
 
             @test Set(minimal_siphons(N_siph, M_siph)) == Set([Set([2, 3, 1]), Set([4, 2, 3])])
-            @test siphon_test(N_siph, M_siph) == true
+            @test has_critical_siphon(N_siph, M_siph) == false
         end
 
     end

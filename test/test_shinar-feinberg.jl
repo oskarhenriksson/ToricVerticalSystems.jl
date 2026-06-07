@@ -33,7 +33,6 @@ function run_tests()
         Ntilde, Mtilde = reduced_network(N, M, intermediates_result)
         @test length(complexes(Ntilde, Mtilde)) == 10
 
-
         # Matroid partition
         MP = matroid_partition(N)
         @test Set(Set.(MP)) == Set([Set(collect(3:14)), Set([1, 2])])
@@ -63,7 +62,7 @@ function run_tests()
         @test mixed_volume(F) == 4
 
         # Siphon test
-        @test siphon_test(N, M) == true
+        @test critical_minimal_siphons(N, M) == [Set([1, 2, 3, 5, 6, 8, 9])]
 
         # Capacity for multistationarity
         @test coset_with_multistationarity(A, W) == false
